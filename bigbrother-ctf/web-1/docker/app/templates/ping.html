@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ping App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Orbitron", sans-serif;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .ping {
+            width: 50%;
+            padding: 50px;
+            text-align: center;
+            background-color: black;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .ping img {
+            max-width: 33%; /* Limit to 1/3 of the screen width */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00B4D8; /* Light blue color */
+        }
+
+        p, label {
+            font-size: 1.2em;
+            color: #90E0EF; /* Lighter blue for text */
+        }
+
+        button, input[type="text"] {
+            padding: 15px 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            border: thin solid #00B4D8;
+            border-radius: 5px;
+            color: white; /* White font color for button and input */
+            background-color: #023E8A; /* Dark blue background */
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            background-color: #00B4D8; /* Light blue background */
+        }
+
+        button:hover {
+            background-color: #0077B6; /* Darker blue on hover */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            padding: 15px 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px; /* Rounded corners */
+            color: white;
+            background-color: #00B4D8; /* Light blue background */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Add some space above the button */
+        }
+
+        button:hover {
+            background-color: #0077B6; /* Slightly darker blue on hover */
+        }
+        #submit-button {
+            padding: 15px 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px; /* Rounded corners */
+            color: white;
+            background-color: #00B4D8; /* Light blue background */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Add some space above the button */
+        }
+
+        #submit-button:hover {
+           background-color: #0077B6; /* Slightly darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="ping">
+        <img src="static/files/logo.png" alt="Logo">
+        <h1>Ministry of Null</h1>
+        <p>Internet Connectivity Engine</p>
+        <p>Enter an IP address to ping:</p>
+        <form method="post">
+            <input type="text" name="url" />
+            <input type="submit" id="submit-button" value="Ping" />
+        </form>
+
+        <!-- Section to display ping output -->
+        {% if output %}
+            <div class="output">
+                {{ output }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
